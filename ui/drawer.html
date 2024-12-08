@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawer Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Slide-in animation for the drawer */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* Slide-out animation for the drawer */
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .drawer {
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    .drawer-hide {
+      animation: slideOut 0.3s ease-in forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Button to open the drawer -->
+  <button id="openDrawer" class="p-4 bg-blue-500 text-white rounded-md absolute top-5 left-5 z-10">
+    Open Drawer
+  </button>
+
+  <!-- Drawer (Hidden by default) -->
+  <div id="drawer" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-20 hidden">
+    <div class="flex justify-end p-4">
+      <button id="closeDrawer" class="text-white text-xl">×</button>
+    </div>
+
+    <!-- Drawer content -->
+    <div class="bg-white w-64 h-full p-6 drawer absolute left-0 top-0">
+      <h2 class="text-2xl font-semibold mb-4">Drawer Navigation</h2>
+      <ul class="space-y-4">
+        <li><a href="#" class="text-lg text-gray-700 hover:text-blue-500">Home</a></li>
+        <li><a href="#" class="text-lg text-gray-700 hover:text-blue-500">About</a></li>
+        <li><a href="#" class="text-lg text-gray-700 hover:text-blue-500">Services</a></li>
+        <li><a href="#" class="text-lg text-gray-700 hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const openDrawerButton = document.getElementById('openDrawer');
+    const drawer = document.getElementById('drawer');
+    const closeDrawerButton = document.getElementById('closeDrawer');
+
+    // Open Drawer
+    openDrawerButton.addEventListener('click', () => {
+      drawer.classList.remove('hidden');
+      drawer.classList.add('drawer');
+    });
+
+    // Close Drawer
+    closeDrawerButton.addEventListener('click', () => {
+      drawer.classList.remove('drawer');
+      drawer.classList.add('drawer-hide');
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+      }, 300); // Wait for the animation to finish before hiding
+    });
+
+    // Close Drawer when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === drawer) {
+        closeDrawerButton.click();
+      }
+    });
+  </script>
+
+</body>
+</html>

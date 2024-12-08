@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Progress Bar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+  <!-- Progress Bar Container -->
+  <div class="max-w-xs w-full bg-gray-200 rounded-full h-4 mb-6">
+    <!-- Progress Bar (dynamic width) -->
+    <div id="progress-bar" class="bg-blue-500 h-4 rounded-full" style="width: 0%;"></div>
+  </div>
+
+  <!-- Label and Progress Percentage -->
+  <div id="progress-label" class="text-center text-gray-700">Loading... 0%</div>
+
+  <!-- Button to Simulate Progress -->
+  <div class="text-center mt-4">
+    <button onclick="startProgress()" class="px-6 py-2 bg-blue-500 text-white rounded-md">
+      Start Progress
+    </button>
+  </div>
+
+  <script>
+    let progress = 0;
+    const progressBar = document.getElementById('progress-bar');
+    const progressLabel = document.getElementById('progress-label');
+
+    function startProgress() {
+      const interval = setInterval(() => {
+        if (progress < 100) {
+          progress += 1;
+          updateProgressBar(progress);
+        } else {
+          clearInterval(interval); // Stop when it reaches 100%
+        }
+      }, 100); // Updates progress every 100ms
+    }
+
+    function updateProgressBar(progress) {
+      progressBar.style.width = `${progress}%`;
+      progressLabel.textContent = `Loading... ${progress}%`;
+    }
+  </script>
+
+</body>
+</html>

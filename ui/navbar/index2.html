@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar with Dropdowns</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+      .submenu {
+          display: none;
+          animation: fadeIn 0.3s ease-in-out;
+      }
+  
+      .submenu.active {
+          display: block;
+      }
+  
+      .sidebar-collapsed .submenu li {
+          padding-left: 1.5rem; /* Adjust indentation */
+      }
+  
+      .sidebar-collapsed .submenu i {
+          font-size: 0.75rem; /* Smaller icons */
+      }
+  </style>
+  
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-white w-64 min-h-screen flex flex-col transition-all duration-300 ease-in-out">
+            <!-- Sidebar Header -->
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-xl font-semibold sidebar-text">v0 App</h2>
+                <button id="sidebarToggle" class="text-gray-500 hover:text-gray-700 p-1 rounded-md hover:bg-gray-100">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="flex-1 overflow-y-auto">
+                <ul class="p-2 space-y-2">
+                    <!-- Dashboard -->
+                    <li>
+                        <button class="flex items-center justify-between w-full p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out focus:outline-none group" onclick="toggleSubmenu(this)">
+                            <span class="flex items-center">
+                                <i class="ri-dashboard-line text-xl mr-1 sidebar-icon"></i>
+                                <span class="sidebar-text ml-2">Dashboard</span>
+                            </span>
+                            <i class="ri-arrow-down-s-line sidebar-text"></i>
+                        </button>
+                        <ul class="submenu ml-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-line-chart-line text-lg mr-1 sidebar-icon"></i>
+                                    <span class="sidebar-text ml-2">Analytics</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-pie-chart-2-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Projects -->
+                    <li>
+                        <button class="flex items-center justify-between w-full p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out focus:outline-none group" onclick="toggleSubmenu(this)">
+                            <span class="flex items-center">
+                                <i class="ri-folder-line text-xl mr-3 sidebar-icon"></i>
+                                <span class="sidebar-text">Projects</span>
+                            </span>
+                            <i class="ri-arrow-down-s-line sidebar-text"></i>
+                        </button>
+                        <ul class="submenu ml-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-add-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">New Project</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-list-check text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">All Projects</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Components -->
+                    <li>
+                        <button class="flex items-center justify-between w-full p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out focus:outline-none group" onclick="toggleSubmenu(this)">
+                            <span class="flex items-center">
+                                <i class="ri-layout-2-line text-xl mr-3 sidebar-icon"></i>
+                                <span class="sidebar-text">Components</span>
+                            </span>
+                            <i class="ri-arrow-down-s-line sidebar-text"></i>
+                        </button>
+                        <ul class="submenu ml-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-button-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">Buttons</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-input-method-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">Forms</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Settings -->
+                    <li>
+                        <button class="flex items-center justify-between w-full p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out focus:outline-none group" onclick="toggleSubmenu(this)">
+                            <span class="flex items-center">
+                                <i class="ri-settings-3-line text-xl mr-3 sidebar-icon"></i>
+                                <span class="sidebar-text">Settings</span>
+                            </span>
+                            <i class="ri-arrow-down-s-line sidebar-text"></i>
+                        </button>
+                        <ul class="submenu ml-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-user-settings-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">Account</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out group">
+                                    <i class="ri-notification-4-line text-lg mr-3 sidebar-icon"></i>
+                                    <span class="sidebar-text">Notifications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="border-t p-4">
+                <a href="#" class="flex items-center text-gray-700 hover:bg-gray-100 rounded-md p-2 transition-all duration-200 ease-in-out">
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-8 h-8 rounded-full mr-3">
+                    <span class="sidebar-text">John Doe</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h1 class="text-2xl font-semibold mb-4">Welcome to v0 App</h1>
+            <p>Select an option from the sidebar to get started.</p>
+        </main>
+    </div>
+
+    <script>
+      // Toggle sidebar
+      sidebarToggle.addEventListener('click', () => {
+          sidebar.classList.toggle('w-64'); // Expanded
+          sidebar.classList.toggle('w-16'); // Collapsed
+  
+          sidebarText.forEach((element) => {
+              element.classList.toggle('hidden');
+          });
+  
+          sidebarIcons.forEach((icon) => {
+              if (sidebar.classList.contains('w-16')) {
+                  icon.classList.add('text-sm'); // Smaller icons
+                  icon.classList.remove('text-lg', 'text-xl');
+              } else {
+                  icon.classList.remove('text-sm');
+                  icon.classList.add('text-lg'); // Default icon size
+              }
+          });
+  
+          // Adjust indentation and hierarchy
+          const submenus = document.querySelectorAll('.submenu');
+          submenus.forEach((submenu) => {
+              submenu.classList.toggle('ml-6', !sidebar.classList.contains('w-16'));
+              submenu.classList.toggle('ml-3', sidebar.classList.contains('w-16'));
+          });
+      });
+  
+      // Toggle submenu
+      function toggleSubmenu(button) {
+          const submenu = button.nextElementSibling;
+          const icon = button.querySelector('.ri-arrow-down-s-line');
+  
+          // Allow toggle only in expanded state
+          if (!sidebar.classList.contains('w-16')) {
+              submenu.classList.toggle('active');
+              icon.classList.toggle('ri-arrow-down-s-line');
+              icon.classList.toggle('ri-arrow-up-s-line');
+          }
+      }
+  </script>
+  
+</body>
+</html>

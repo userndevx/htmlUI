@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Notification Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+  <!-- Notification Container -->
+  <div class="fixed top-0 right-0 p-6 space-y-4 z-50">
+    
+    <!-- Success Notification -->
+    <div class="max-w-xs w-full p-4 mb-4 rounded-md shadow-sm flex items-center space-x-4 bg-white border-l-4 border-green-500">
+      <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m2 9a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-black">Success! Your changes have been saved.</span>
+    </div>
+
+    <!-- Error Notification -->
+    <div class="max-w-xs w-full p-4 mb-4 rounded-md shadow-sm flex items-center space-x-4 bg-white border-l-4 border-red-500">
+      <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path>
+      </svg>
+      <span class="text-black">Error! Something went wrong.</span>
+    </div>
+
+    <!-- Info Notification -->
+    <div class="max-w-xs w-full p-4 mb-4 rounded-md shadow-sm flex items-center space-x-4 bg-white border-l-4 border-blue-500">
+      <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M12 4a8 8 0 110 16 8 8 0 010-16z"></path>
+      </svg>
+      <span class="text-black">Info: New updates are available.</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

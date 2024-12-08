@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+  <!-- Calendar Container -->
+  <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+
+    <!-- Calendar Header (Month and Year) -->
+    <div class="flex items-center justify-between mb-4">
+      <button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <span class="text-xl font-semibold text-gray-700">December 2024</span>
+      <button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Calendar Days of Week -->
+    <div class="grid grid-cols-7 gap-2 text-center text-gray-600 font-semibold">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+
+    <!-- Calendar Days Grid -->
+    <div class="grid grid-cols-7 gap-2 mt-4">
+      <!-- Empty spaces before the first day of the month -->
+      <div class="text-center text-gray-300">1</div>
+      <div class="text-center text-gray-300">2</div>
+      <div class="text-center text-gray-300">3</div>
+      <div class="text-center text-gray-300">4</div>
+      <div class="text-center text-gray-300">5</div>
+      <div class="text-center text-gray-300">6</div>
+      <div class="text-center text-gray-300">7</div>
+
+      <div class="text-center text-gray-300">8</div>
+      <div class="text-center text-gray-300">9</div>
+      <div class="text-center text-gray-300">10</div>
+      <div class="text-center text-gray-300">11</div>
+      <div class="text-center text-gray-300">12</div>
+      <div class="text-center text-gray-300">13</div>
+      <div class="text-center text-gray-300">14</div>
+
+      <div class="text-center text-gray-300">15</div>
+      <div class="text-center text-gray-300">16</div>
+      <div class="text-center text-gray-300">17</div>
+      <div class="text-center text-gray-300">18</div>
+      <div class="text-center text-gray-300">19</div>
+      <div class="text-center text-gray-300">20</div>
+      <div class="text-center text-gray-300">21</div>
+
+      <div class="text-center text-gray-300">22</div>
+      <div class="text-center text-gray-300">23</div>
+      <div class="text-center text-gray-300">24</div>
+      <div class="text-center text-gray-300">25</div>
+      <div class="text-center text-gray-300">26</div>
+      <div class="text-center text-gray-300">27</div>
+      <div class="text-center text-gray-300">28</div>
+
+      <div class="text-center text-gray-300">29</div>
+      <div class="text-center text-gray-300">30</div>
+      <div class="text-center text-gray-300">31</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
