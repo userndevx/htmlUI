@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UI Library with Sidebar</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="button.css">
+        <link rel="stylesheet" href="spin.css">
+        <style>
+                .menu-item.active>a,
+                .menu-item.active>button {
+                        color: #FCD34D;
+                        /* Tailwind's yellow-300 */
+                }
+
+                .submenu-item.active {
+                        background-color: #FCD34D;
+                        /* Tailwind's yellow-300 */
+                        color: #1F2937;
+                        /* Tailwind's gray-800 */
+                }
+        </style>
+
+</head>
+
+<body class="bg-gray-100">
+        <div class="flex h-screen">
+                <!-- Sidebar -->
+                <aside class="w-64 bg-gray-800 text-white flex flex-col overflow-y-auto ">
+                        <div class="p-4 text-lg font-bold border-b border-gray-700">Sidebar Menu</div>
+                        <nav class="flex-grow p-4">
+                                <ul>
+                                        <li class="mb-4">
+                                                <button class="w-full text-left flex items-center px-4 py-2 rounded hover:bg-gray-700"
+                                                        onclick="toggleDropdown('menu1')">
+                                                        <span class="flex-1">Components</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="w-4 h-4 transition-transform" id="menu1-icon"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M9 5l7 7-7 7" />
+                                                        </svg>
+                                                </button>
+                                                <ul id="menu1" class="pl-8 mt-2 space-y-2 hidden">
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('button-page.html')">Button
+                                                                        Page</button></li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('card-page.html')">Card
+                                                                        Page</button></li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('divider.html')">Divider
+                                                                        Page</button></li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('layout.html')">Layout</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('dropdown.html')">Dropdown</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="menu-btn">Menu</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('pagination.html')"
+                                                                        id="pagination">Pagination</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('steps.html')">Steps</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="modal-btn">Modal</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="modal2-btn">Modal with h&F </button> </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('skeleton.html')">Skeleton</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('skeleton2.html')">Skeleton2</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('spin.html')">Spin</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="drawer-btn">Drawer</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('alert.html')">Alert</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="notification-btn">Notification</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="notificationToast-btn">Notification
+                                                                        Toast</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('progress.html')">Progress</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('datepicker.html')">Date
+                                                                        Picker</button></li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('avatar.html')">Avatar</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('badge.html')">Badge</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="calendar-btn">Calendar</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('calendarStatic.html')">Calendar
+                                                                        Static</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="carousel-btn">Carousel</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        id="sidebar-btn">Sidebar</button>
+                                                        </li>
+                                                        <!-- <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('steps.html')">Steps</button>
+                                                        </li>
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('steps.html')">Steps</button>
+                                                        </li>
+
+                                                        <li><button class="w-full text-left px-4 py-2 rounded hover:bg-gray-700"
+                                                                        onclick="loadPageContent('card-page.html')">Card
+                                                                        Page</button></li> -->
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                <button class="w-full text-left flex items-center px-4 py-2 rounded hover:bg-gray-700"
+                                                        onclick="loadPageContent('menu2-page.html')">Menu 2</button>
+                                        </li>
+                                </ul>
+                        </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="flex-1 p-8 bg-white overflow-y-auto h-full">
+                        <div id="main-content" class="h-full">
+                                <h1 class="text-2xl font-bold" id="content-title">Welcome</h1>
+                                <p class="mt-4 text-gray-600" id="content-description">Select an item from the sidebar
+                                        to view
+                                        content here.
+                                </p>
+                        </div>
+                </main>
+        </div>
+
+
+        <script>
+                function toggleDropdown(menuId) {
+                        const menu = document.getElementById(menuId);
+                        const icon = document.getElementById(`${menuId}-icon`);
+                        if (menu.classList.contains('hidden')) {
+                                menu.classList.remove('hidden');
+                                icon.classList.add('rotate-90');
+                        } else {
+                                menu.classList.add('hidden');
+                                icon.classList.remove('rotate-90');
+                        }
+                }
+
+                function loadPageContent(url) {
+                        const mainContent = document.getElementById('main-content');
+
+                        fetch(url)
+                                .then((response) => {
+                                        if (!response.ok) {
+                                                throw new Error('Network response was not ok');
+                                        }
+                                        return response.text();
+                                })
+                                .then((html) => {
+                                        mainContent.innerHTML = html;
+                                })
+                                .catch((error) => {
+                                        mainContent.innerHTML = `
+                        <h1 class="text-2xl font-bold">Error</h1>
+                        <p class="mt-4 text-gray-600">Unable to load content: ${error.message}</p>
+                    `;
+                                });
+                }
+
+
+        </script>
+
+        <script>
+
+                // menu js 
+                document.getElementById('menu-btn').addEventListener('click', () => {
+                        fetch('menu.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'menu.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+
+                // modal js
+                document.getElementById('modal-btn').addEventListener('click', () => {
+                        fetch('modal.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'modal.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+
+                // modal 2 js
+                document.getElementById('modal2-btn').addEventListener('click', () => {
+                        fetch('modal2.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'modal2.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('drawer-btn').addEventListener('click', () => {
+                        fetch('drawer.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'drawer.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('notification-btn').addEventListener('click', () => {
+                        fetch('notification.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'notification.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('notificationToast-btn').addEventListener('click', () => {
+                        fetch('notificationToast.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'notificationToast.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('calendar-btn').addEventListener('click', () => {
+                        fetch('calendar.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'calendar.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('carousel-btn').addEventListener('click', () => {
+                        fetch('carousel.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'carousel.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+                document.getElementById('sidebar-btn').addEventListener('click', () => {
+                        fetch('sidebar.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'sidebar.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+        </script>
+
+        <!-- pagination js
+        <script>
+                document.getElementById('pagination').addEventListener('click', () => {
+                        fetch('pagination.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                        document.getElementById('main-content').innerHTML = data;
+
+                                        // Load menu.js after menu.html content
+                                        const menuScript = document.createElement('script');
+                                        menuScript.src = 'pagination.js';
+                                        document.body.appendChild(menuScript);
+                                });
+                });
+        </script> -->
+</body>
+
+</html>

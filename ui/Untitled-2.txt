@@ -1,0 +1,1 @@
+side bar should comtains the menu as an each button 

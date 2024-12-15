@@ -1,0 +1,104 @@
+<h1 class="text-2xl font-bold mb-4">Divider Component</h1>
+<p class="text-gray-600 mb-4">This page demonstrates the use of a customizable divider component.</p>
+
+<div class="space-y-8">
+    <!-- Basic Divider -->
+    <div>
+        <p class="text-gray-700">Content above the divider</p>
+        <hr class="my-4 border-gray-300">
+        <p class="text-gray-700">Content below the divider</p>
+    </div>
+
+    <!-- Divider with Text -->
+    <div class="relative flex items-center">
+        <div class="flex-grow border-t border-gray-300"></div>
+        <span class="px-4 text-gray-500 bg-white">OR</span>
+        <div class="flex-grow border-t border-gray-300"></div>
+    </div>
+
+    <!-- Vertical Divider -->
+    <div class="flex items-center space-x-4">
+        <div class="text-gray-700">Left Content</div>
+        <div class="w-px h-8 bg-gray-300"></div>
+        <div class="text-gray-700">Right Content</div>
+    </div>
+
+    <!-- Fancy Divider -->
+    <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-dashed border-gray-400"></div>
+        </div>
+        <div class="relative text-center">
+            <span class="px-4 bg-white text-sm text-gray-500">Continue</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Gradient Divider -->
+<div class="w-full max-w-md">
+    <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+            <span class="px-2 bg-gray-100 text-gray-500">Gradient Divider</span>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Divider with Icon -->
+<div class="w-full max-w-md">
+    <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+            <span class="px-2 bg-gray-100 text-gray-500">
+                <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Colored Divider -->
+<div class="w-full max-w-md">
+    <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t-2 border-blue-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+            <span class="px-2 bg-gray-100 text-blue-500 font-medium">Colored Divider</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Divider with Icon -->
+<div class="w-full max-w-md flex items-center">
+    <div class="flex-grow border-t border-gray-300"></div>
+    <div class="px-4 text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+    </div>
+    <div class="flex-grow border-t border-gray-300"></div>
+</div>
+
+<!-- Fancy Divider -->
+<div class="w-full max-w-md flex items-center">
+    <div class="flex-grow border-t-2 border-dashed border-gray-300"></div>
+    <span class="px-4 text-gray-500 text-sm font-medium">Continue</span>
+    <div class="flex-grow border-t-2 border-dashed border-gray-300"></div>
+</div>

@@ -1,0 +1,97 @@
+<!-- menu.html -->
+<nav class="bg-white shadow-md rounded-lg w-96">
+  <ul class="divide-y divide-gray-200">
+    <li class="relative">
+      <button class="parent-btn p-4 w-full text-left hover:bg-gray-100 cursor-pointer">Home</button>
+      <ul class="submenu hidden bg-white shadow-lg">
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Submenu 1</li>
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Submenu 2</li>
+      </ul>
+    </li>
+    <li class="relative">
+      <button class="parent-btn p-4 w-full text-left hover:bg-gray-100 cursor-pointer">About</button>
+      <ul class="submenu hidden bg-white shadow-lg">
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Our Team</li>
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Our Story</li>
+      </ul>
+    </li>
+    <li class="relative">
+      <button class="parent-btn p-4 w-full text-left hover:bg-gray-100 cursor-pointer">Services</button>
+      <ul class="submenu hidden bg-white shadow-lg">
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Consulting</li>
+        <li class="child-btn p-4 hover:bg-gray-100 cursor-pointer">Support</li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- <script>
+  document.querySelectorAll('.parent-btn').forEach(parent => {
+    parent.addEventListener('click', () => {
+      const submenu = parent.nextElementSibling;
+      submenu.classList.toggle('hidden');
+      parent.classList.toggle('bg-gray-200');
+    });
+  });
+
+  document.querySelectorAll('.child-btn').forEach(child => {
+    child.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = child.closest('li').querySelector('.parent-btn');
+      document.querySelectorAll('.child-btn').forEach(c => c.classList.remove('bg-gray-300'));
+      document.querySelectorAll('.parent-btn').forEach(p => p.classList.remove('bg-gray-200'));
+      parent.classList.add('bg-gray-200');
+      child.classList.add('bg-gray-300');
+    });
+  });
+</script> -->
+
+// new menu
+
+<!-- <nav class="bg-gray-800 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-white text-2xl font-bold">Logo</a>
+    <ul class="flex space-x-4">
+      <li class="menu-item">
+        <a href="#" class="text-white hover:text-gray-300">Home</a>
+      </li>
+      <li class="relative group menu-item">
+        <button class="text-white hover:text-gray-300 flex items-center">
+          Products
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <ul class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="products">Product 1</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="products">Product 2</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="products">Product 3</a></li>
+        </ul>
+      </li>
+      <li class="relative group menu-item">
+        <button class="text-white hover:text-gray-300 flex items-center">
+          Services
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <ul class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="services">Service 1</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="services">Service 2</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 submenu-item"
+              data-parent="services">Service 3</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="text-white hover:text-gray-300">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->

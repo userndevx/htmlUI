@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen"> -->
+
+  <!-- Dropdown Component -->
+  <div class="relative inline-block text-left">
+    <!-- Dropdown Button -->
+    <button id="dropdownButton" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+      Options
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden">
+      <ul class="py-1">
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to toggle the dropdown visibility
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownButton.addEventListener('click', () => {
+      // Toggle the hidden class to show/hide the dropdown menu
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close the dropdown if clicked outside
+    window.addEventListener('click', (e) => {
+      if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  </script>
+
+<!-- </body>
+</html> -->

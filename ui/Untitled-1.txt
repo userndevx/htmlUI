@@ -1,0 +1,26 @@
+# need to change most components color there 
+
+ant designs :
+  green outline : rgb(183 235 143) | hsl(94 69.7% 74.1%)
+  green inter : rgb(246 255 237)  | hsl(90 100% 96.5%)
+  green logo : rgb(82 196 26) | hsl(100 76.6% 43.5%)
+
+  yellow outline: rgb(255 229 143) | hsl(46 100% 78%)
+  yellow inter : rgb(255 251 230) | hsl(50 100% 95.1%)
+  yellow logo : rgb(250 173 20) | hsl(40 95.8% 52.9%)
+
+  blue outline : rgb(145 202 255) | hsl(209 100% 78.4%)
+  blue inter : rgb(230 244 255) | hsl(206 100% 95.1%)
+  blue logo : rgb(22 119 255) | hsl(215 100% 54.3%)
+
+  red outline : rgb(255 204 199) | hsl(5 100% 89%)
+  red inter : rgb(255 242 240) | hsl(8 100% 97.1%)
+  red logo : rgb(255 77 79) | hsl(359 100% 65.1%)
+
+
+  colors:
+    primary : 	rgb(22 119 255) | hsl(215 100% 54.3%)  
+    danger  : rgb(255 77 79) | 	hsl(359 100% 65.1%)
+    
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich UI Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Tailwind configurations (optional) */
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 shadow-md">
+        <h1 class="text-2xl font-bold">Rich UI Library</h1>
+        <p class="text-sm">A library of reusable UI components built with Tailwind CSS</p>
+    </header>
+
+    <aside class="w-64 h-screen fixed bg-gray-800 text-white">
+        <nav class="p-4">
+            <h2 class="text-lg font-bold">Sidebar</h2>
+            <ul class="space-y-2">
+                <li>
+                    <button class="w-full text-left px-2 py-1 hover:bg-gray-700 rounded">Dashboard</button>
+                </li>
+                <li>
+                    <button class="w-full text-left px-2 py-1 hover:bg-gray-700 rounded">Settings</button>
+                </li>
+                <li>
+                    <div>
+                        <button id="dropdownBtn" class="w-full text-left px-2 py-1 hover:bg-gray-700 rounded">More
+                            Options</button>
+                        <ul id="dropdownMenu" class="hidden pl-4 mt-2 space-y-2">
+                            <li><button class="w-full text-left px-2 py-1 hover:bg-gray-700 rounded">Option 1</button>
+                            </li>
+                            <li><button class="w-full text-left px-2 py-1 hover:bg-gray-700 rounded">Option 2</button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="ml-64 p-6 space-y-8">
+        <!-- Avatar Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Avatar</h2>
+            <div class="flex space-x-4">
+                <img class="w-12 h-12 rounded-full" src="https://via.placeholder.com/48" alt="Avatar">
+                <img class="w-16 h-16 rounded-full" src="https://via.placeholder.com/64" alt="Avatar">
+            </div>
+        </section>
+
+        <!-- Badge Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Badge</h2>
+            <div class="flex space-x-4">
+                <span class="px-3 py-1 bg-blue-500 text-white rounded-full">New</span>
+                <span class="px-3 py-1 bg-green-500 text-white rounded-full">Success</span>
+                <span class="px-3 py-1 bg-red-500 text-white rounded-full">Error</span>
+            </div>
+        </section>
+
+        <!-- Progress Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Progress</h2>
+            <div class="space-y-4">
+                <div class="w-full bg-gray-200 rounded-full">
+                    <div class="bg-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+                        style="width: 50%;">50%</div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                    <div class="bg-green-500 text-xs font-medium text-green-100 text-center p-0.5 leading-none rounded-full"
+                        style="width: 75%;">75%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spinner Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Spinner</h2>
+            <div class="space-y-4">
+                <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500"></div>
+                <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-green-500"></div>
+            </div>
+        </section>
+
+        <!-- Tabs Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Tabs</h2>
+            <div class="border-b border-gray-200">
+                <ul class="flex space-x-4">
+                    <li><button class="py-2 px-4 text-blue-500 border-b-2 border-blue-500">Tab 1</button></li>
+                    <li><button class="py-2 px-4 text-gray-500 hover:text-blue-500">Tab 2</button></li>
+                    <li><button class="py-2 px-4 text-gray-500 hover:text-blue-500">Tab 3</button></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Steps Component -->
+        <section>
+            <h2 class="text-xl font-semibold">Steps</h2>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full">1</div>
+                    <span class="ml-2 text-gray-500">Step 1</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-500 rounded-full">2</div>
+                    <span class="ml-2 text-gray-500">Step 2</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2024 Rich UI Library. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dropdown functionality
+        document.getElementById('dropdownBtn').addEventListener('click', () => {
+            document.getElementById('dropdownMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

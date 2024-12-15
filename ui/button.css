@@ -1,0 +1,62 @@
+
+:root {
+      --btn-primary-bg: #2563eb; /* Blue-600 */
+      --btn-primary-bg-hover: #1e40af; /* Blue-700 */
+      --btn-primary-ring: #93c5fd; /* Blue-300 */
+
+      --btn-outline-border: #2563eb; /* Blue-600 */
+      --btn-outline-hover-bg: #eff6ff; /* Blue-50 */
+
+      --btn-padding-x: 1.5rem; /* Default size */
+      --btn-padding-y: 0.75rem; /* Default size */
+      --btn-font-size: 1rem;    /* Default font size */
+    }
+
+    .btn-primary {
+        @apply px-6 py-2  text-white font-semibold;
+      /* @apply text-white font-semibold rounded-lg shadow-md transition focus:outline-none; */
+      background-color: var(--btn-primary-bg);
+      padding: var(--btn-padding-y) var(--btn-padding-x);
+      font-size: var(--btn-font-size);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--btn-primary-bg-hover);
+    }
+
+    .btn-primary:focus {
+      @apply ring-2;
+      ring-color: var(--btn-primary-ring);
+    }
+
+    .btn-outline {
+      @apply font-semibold rounded-lg shadow-md border-2 transition focus:outline-none;
+      border-color: var(--btn-outline-border);
+      color: var(--btn-outline-border);
+      background-color: transparent;
+      padding: var(--btn-padding-y) var(--btn-padding-x);
+      font-size: var(--btn-font-size);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--btn-outline-hover-bg);
+    }
+
+    .btn-outline:focus {
+      @apply ring-2;
+      ring-color: var(--btn-primary-ring);
+    }
+
+    /* Size Variants */
+    .btn-sm {
+      --btn-padding-x: 1rem;
+      --btn-padding-y: 0.5rem;
+      --btn-font-size: 0.875rem; /* Small size */
+    }
+
+    .btn-lg {
+      --btn-padding-x: 2rem;
+      --btn-padding-y: 1rem;
+      --btn-font-size: 1.25rem; /* Large size */
+    }
+  

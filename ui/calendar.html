@@ -1,0 +1,35 @@
+<!-- Calendar Container -->
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+
+  <!-- Calendar Header (Month and Year) -->
+  <div class="flex items-center justify-between mb-4">
+    <button id="prevMonth" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <span id="monthYear" class="text-xl font-semibold text-gray-700">December 2024</span>
+    <button id="nextMonth" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Calendar Days of Week -->
+  <div class="grid grid-cols-7 gap-2 text-center text-gray-600 font-semibold">
+    <div>Sun</div>
+    <div>Mon</div>
+    <div>Tue</div>
+    <div>Wed</div>
+    <div>Thu</div>
+    <div>Fri</div>
+    <div>Sat</div>
+  </div>
+
+  <!-- Calendar Days Grid -->
+  <div id="calendarDays" class="grid grid-cols-7 gap-2 mt-4">
+    <!-- Days will be dynamically inserted here -->
+  </div>
+
+</div>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced menu Menu Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="relative inline-block text-left" id="menu-container">
+        <button type="button"
+            class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+            id="menu-button" aria-haspopup="true" aria-expanded="false">
+            Options
+            <svg class="-mr-1 ml-2 h-5 w-5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+            </svg>
+        </button>
+
+        <div class="hidden absolute right-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-200 ease-out opacity-0 transform scale-95"
+            id="menu-menu">
+            <div class="p-2">
+                <input type="text" placeholder="Search..."
+                    class="w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="search-input">
+            </div>
+            <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                <a href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem" data-menu-item>
+                    <i class="fas fa-user-circle mr-2"></i>
+                    Account settings
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem" data-menu-item>
+                    <i class="fas fa-question-circle mr-2"></i>
+                    Support
+                </a>
+                <div class="relative" data-nested-menu>
+                    <button type="button"
+                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem" data-menu-item>
+                        <i class="fas fa-cog mr-2"></i>
+                        Settings
+                        <svg class="ml-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="hidden absolute left-full top-0 ml-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                        data-nested-menu>
+                        <div class="py-1" role="menu" aria-orientation="vertical">
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem">General</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem">Security</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem">Notifications</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem" data-menu-item>
+                    <i class="fas fa-file-alt mr-2"></i>
+                    License
+                </a>
+                <button type="button"
+                    class="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
+                    role="menuitem" data-menu-item>
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Sign out
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const menuMenu = document.getElementById('menu-menu');
+        const menuContainer = document.getElementById('menu-container');
+        const menuItems = document.querySelectorAll('[data-menu-item]');
+        const searchInput = document.getElementById('search-input');
+        const nestedmenus = document.querySelectorAll('[data-nested-menu]');
+
+        function togglemenu() {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            menuMenu.classList.toggle('hidden');
+            menuMenu.classList.toggle('opacity-0');
+            menuMenu.classList.toggle('scale-95');
+            menuButton.querySelector('svg').classList.toggle('rotate-180');
+        }
+
+        function closeAllmenus() {
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuMenu.classList.add('hidden', 'opacity-0', 'scale-95');
+            menuButton.querySelector('svg').classList.remove('rotate-180');
+            nestedmenus.forEach(nestedmenu => {
+                nestedmenu.querySelector('[data-nested-menu]').classList.add('hidden');
+            });
+        }
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            togglemenu();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuContainer.contains(e.target)) {
+                closeAllmenus();
+            }
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (!item.closest('[data-nested-menu]')) {
+                    e.preventDefault();
+                    menuItems.forEach(i => i.classList.remove('bg-gray-100', 'text-gray-900'));
+                    item.classList.add('bg-gray-100', 'text-gray-900');
+                    closeAllmenus();
+                }
+            });
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            menuItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        nestedmenus.forEach(nestedmenu => {
+            const nestedButton = nestedmenu.querySelector('[data-menu-item]');
+            const nestedMenu = nestedmenu.querySelector('[data-nested-menu]');
+
+            nestedButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                nestedMenu.classList.toggle('hidden');
+            });
+
+            nestedMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+
+</html>
